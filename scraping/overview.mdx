@@ -5,7 +5,7 @@ description: "Scrape users from any X page — followers, retweeters, commenters
 
 ## Overview
 
-The Scraping module lets you collect usernames and user IDs from X. Use the scraped data for DM campaigns, quoting, reply quotes, or any other feature that requires a list of users.
+The Scraping module lets you collect usernames from X. Use the scraped data for DM campaigns, quoting, reply quotes, or any other feature that requires a list of users.
 
 <CardGroup cols={3}>
   <Card title="Followers" icon="users" href="/scraping/followers-scraper">
@@ -15,20 +15,20 @@ The Scraping module lets you collect usernames and user IDs from X. Use the scra
     Scrape from any X URL — retweeters, quoters, commenters, search results, anything.
   </Card>
   <Card title="Resolver" icon="magnifying-glass" href="/scraping/resolver">
-    Convert IDs to usernames (or usernames to IDs).
+    Convert between usernames and IDs when a specific module requires a different format.
   </Card>
 </CardGroup>
 
 ### How Scraping Connects to Other Modules
 
-Scraped data flows into multiple modules depending on what you need:
+Both scrapers output **usernames** by default. Most modules accept usernames directly:
 
 ```
-Scraping → IDs     → Bulk DM Sender (uses IDs directly)
-Scraping → IDs     → Image Tags in Quoting (uses IDs directly)
-Scraping → IDs     → Resolver (ID → username) → Quote Tags, Reply Quotes, Wall Posts, SMM
+Scraping → Usernames → Quote Tags, Reply Quotes, Wall Posts, SMM
+Scraping → Usernames → DM Targets (accepts both usernames and IDs)
+Scraping → Usernames → Resolver (username → ID) → Image Tags (requires IDs)
 ```
 
 <Info>
-  The scraper primarily outputs `.txt` files with user IDs. Some modules use IDs directly (Bulk DM, Image Tags), but most other modes need **usernames**. Use the Resolver to convert IDs to usernames when needed.
+  The scraper outputs `.txt` files with **usernames**. Most modules accept usernames directly — you only need the Resolver if a module requires numeric user IDs (e.g., Image Tags).
 </Info>

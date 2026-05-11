@@ -32,13 +32,16 @@ The DM module is a full outreach engine — attach accounts, build target lists,
 
 <Steps>
   <Step title="Attach DM accounts">
-    Add accounts that will send the messages.
+    Add accounts that will send the messages. Assign a static proxy to each one.
   </Step>
-  <Step title="Check your targets">
-    Run the DM Checker on your target database to filter only users with open DMs.
+  <Step title="Scrape targets">
+    Use the Scraping module to collect usernames.
+  </Step>
+  <Step title="Check targets (recommended)">
+    Run the DM Checker to filter out users with closed DMs. This saves time — the sender won't waste attempts on unreachable users.
   </Step>
   <Step title="Load targets">
-    Upload the filtered user IDs into Targets.
+    Upload the list into DM → Targets. Accepts both usernames and IDs.
   </Step>
   <Step title="Create templates">
     Write message templates with optional variations.

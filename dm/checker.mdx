@@ -5,36 +5,46 @@ description: "Check which target users have open DMs"
 
 ## DM Checker
 
-The DM Checker is **not** for checking your sender accounts — it's for checking your **target database**. You load a list of usernames or IDs, and the checker filters it down to only users who have open DMs and can receive messages.
+The DM Checker filters your target list to only users who can actually receive DMs. This is a **pre-send optimization** — it removes users with closed DMs so the bulk sender doesn't waste time on failed deliveries.
 
 <Frame>
   <img src="/images/dm-checker.png" alt="DM Checker page" />
 </Frame>
 
+### Two Modes
+
+The checker has two modes — switch between them in the UI:
+
+| Mode | Input | Best For |
+|------|-------|----------|
+| **Usernames** | List of `@usernames` | When you have scraped usernames |
+| **IDs** | List of numeric user IDs | When you have IDs from external sources |
+
+The **ID mode** is a 2-phase check: Phase 1 uses the permissions API (fast batch check), Phase 2 uses typeahead to verify edge cases where Phase 1 may report false negatives.
+
 ### How to Use
 
 <Steps>
-  <Step title="Load your target database">
-    Upload a file with usernames or user IDs — the list of people you plan to DM.
+  <Step title="Choose mode">
+    Select **Usernames** or **IDs** depending on your data format.
+  </Step>
+  <Step title="Load your target list">
+    Upload a file with your targets. For large lists (millions), use file upload — the UI shows count only, not the full list.
   </Step>
   <Step title="Run the check">
-    Click **Start**. The checker tests each user to see if their DMs are open.
+    Click **Start**. The checker tests each user and reports open/closed counts in real-time.
   </Step>
-  <Step title="Get filtered results">
-    The checker outputs a cleaned list containing **only users with open DMs**. Users with closed DMs are removed.
-  </Step>
-  <Step title="Use in Bulk Sender">
-    Load the filtered list into DM → Targets for your campaign. Now you know every target can actually receive your message.
+  <Step title="Download open DMs">
+    Download the filtered list — only users with open DMs. Load it into DM → Targets for your campaign.
   </Step>
 </Steps>
 
-### Why This Matters
+### Why Use the Checker
 
-Sending DMs to users with closed DMs wastes your sender accounts' rate limits and can trigger spam flags. By pre-filtering your database, you:
-- Only send to users who can actually receive messages
-- Don't waste your DM accounts on failed deliveries
-- Get higher success rates on campaigns
+Sending to users with closed DMs doesn't get your account banned — it simply fails with an error and the sender moves to the next target. But it **wastes time**: each failed attempt takes the same time as a successful send, and on large campaigns that adds up.
+
+Pre-filtering with the checker means every send attempt actually delivers a message.
 
 <Tip>
-  Always run the DM Checker before launching a bulk DM campaign. It saves time and protects your sender accounts.
+  Run the checker before every large campaign. It's especially important for old target lists — users change their DM settings over time.
 </Tip>

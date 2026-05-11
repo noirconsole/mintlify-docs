@@ -15,24 +15,19 @@ The Targets page is where you manage the list of users who will receive your dir
 
 You can load targets in several ways:
 
-- **Upload a file** — upload a text file with user IDs (one per line)
-- **From Scraping** — use exported files from the Scraping/Resolver modules
+- **Paste directly** — paste usernames or IDs into the text area (one per line)
+- **Upload a file** — upload a `.txt` file with usernames or IDs (one per line)
+- **From Scraping** — use exported files from the Scraping module
 
 <Info>
-  Targets should be **user IDs** (numeric), not usernames. If you have usernames, use the **Resolver** in the Scraping module to convert them first.
+  Targets accept both **usernames** (`@elonmusk` or `elonmusk`) and **numeric user IDs**. You can mix both formats in the same list. The sender resolves usernames to IDs automatically when needed.
 </Info>
 
 ### Target Management
 
-- View total target count
-- Clear targets list
-- Targets are automatically cleared after a campaign starts (the active list is consumed during sending)
-
-### Typical Flow
-
-```
-Scraping → Resolver → DM Targets → Bulk Send
-```
+- View total target count and preview first entries
+- Delete lists you no longer need
+- Create multiple named lists for different campaigns
 
 <Tip>
   For large campaigns (100k+ targets), upload via file rather than pasting. The file upload handles large lists efficiently.

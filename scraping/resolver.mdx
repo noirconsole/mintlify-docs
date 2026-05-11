@@ -5,30 +5,26 @@ description: "Convert between user IDs and usernames"
 
 ## Resolver
 
-The Resolver converts between user IDs and usernames. This is a necessary step because different modules require different formats.
+The Resolver converts between user IDs and usernames. Use it when a module requires a different format than what you have.
 
 <Frame>
   <img src="/images/resolver.png" alt="Resolver page" />
 </Frame>
 
-### Why You Need the Resolver
+### When You Need the Resolver
 
-The Scraper outputs `.txt` files with **user IDs** (numeric). But not all modules accept IDs:
+The scrapers output **usernames** by default. Most modules accept usernames directly, so you **don't always need the Resolver**.
 
-| Module | Accepts |
-|--------|---------|
-| **Bulk DM Sender** | IDs directly — no resolver needed |
-| **Image Tags** (Quoting) | IDs directly — no resolver needed |
-| **Quote Tags** | Usernames — **resolver needed** |
-| **Reply Quotes** | Usernames — **resolver needed** |
-| **Wall Posts** | Usernames — **resolver needed** |
-| **SMM Follow** | Usernames — **resolver needed** |
+| Module | Accepts | Resolver needed? |
+|--------|---------|-----------------|
+| **DM Bulk Sender** | Usernames and IDs | No |
+| **Quote Tags** | Usernames | No |
+| **Reply Quotes** | Usernames | No |
+| **Wall Posts** | Usernames | No |
+| **SMM Follow** | Usernames | No |
+| **Image Tags** (Quoting) | IDs only | **Yes** (username → ID) |
 
-So the typical flow is:
-
-```
-Scraper → IDs (.txt) → Resolver (ID → username) → Quoting / SMM / etc.
-```
+The Resolver is mainly needed when you have **usernames** but need **IDs** (for Image Tags), or when you have **IDs** from an external source and need usernames.
 
 ### How to Use
 
@@ -36,8 +32,11 @@ Scraper → IDs (.txt) → Resolver (ID → username) → Quoting / SMM / etc.
   <Step title="Select token group">
     Choose a group from Token Manager. These accounts perform the resolution lookups.
   </Step>
-  <Step title="Load IDs or usernames">
-    Upload a file or paste the data. The Resolver accepts large lists — hundreds of thousands of entries.
+  <Step title="Choose direction">
+    Select whether you're converting IDs → usernames or usernames → IDs.
+  </Step>
+  <Step title="Load data">
+    Upload a file or paste the data. The Resolver handles large lists — hundreds of thousands of entries.
   </Step>
   <Step title="Start resolving">
     Click **Start**. The resolver processes entries in bulk.
