@@ -1,32 +1,72 @@
 ---
 title: "Quoting"
-description: "Quote tweets, reply quotes, image tags, and wall posts for maximum engagement"
+description: "Mass @mention outreach — quote tweets, replies, image tags, and wall posts"
 ---
 
-## Overview
+## What is Quoting?
 
-The Quoting module offers multiple engagement modes — all designed to increase visibility and drive engagement to tweets or accounts.
+Quoting is a mass **@mention outreach** system. The core idea is simple: your accounts **mention target usernames** (`@user`) across different types of tweets. Every mention sends a **push notification** to the target user, driving them to see your content.
+
+This is one of the most effective methods for gaining reach and attention on X — you are essentially putting your message directly into people's notification feeds.
+
+### The Method
+
+1. You load a **list of target usernames** (scraped from followers, communities, DexScreener exports, etc.)
+2. You choose a **mention mode** — quote tweets, replies, image tags, or wall posts
+3. Your accounts **mass-mention** those users by including `@username` in tweets
+4. Each mentioned user gets a **notification from X** — they see your tweet, your link, your message
+5. Result: **massive reach** without relying on the algorithm
+
+<Info>
+  The difference between modes is *where* the @mention appears — in a quote tweet, a reply, an image tag, or a standalone post. Each triggers a different type of notification on X, and each has different visibility and engagement patterns.
+</Info>
+
+## Four Modes
 
 <CardGroup cols={2}>
   <Card title="Image Tags" icon="image" href="/quoting/image-tags">
-    Tag users in image tweets for notification-based outreach.
+    Post an image and tag users directly in it. Each tagged user gets a notification — the strongest attention signal on X.
   </Card>
   <Card title="Quote Tags" icon="quote" href="/quoting/quote-tags">
-    Quote tweet with tags to amplify reach.
+    Quote-tweet a target tweet and include @mentions in the quote text. The mentioned users see your quote and the original tweet.
   </Card>
   <Card title="Reply Quotes" icon="reply" href="/quoting/reply-quotes">
-    Reply to tweets with @mentions and custom text.
+    Reply under a tweet with @mentions and custom text. Targets get a notification and see the conversation thread.
   </Card>
   <Card title="Wall Posts" icon="clone" href="/quoting/wall-posts">
-    Post the same message across multiple accounts' timelines.
+    Post a message with @mentions directly on your accounts' timelines. Targets get mentioned and your post appears in their notifications.
   </Card>
 </CardGroup>
 
-### When to Use Each Mode
+### Comparison
 
-| Mode | What it does | Input format |
-|------|-------------|-------------|
-| **Image Tags** | Posts an image and tags users in it — they get a notification | User IDs (directly from scraper) |
-| **Quote Tags** | Quote-tweets a target tweet from multiple accounts with @mentions | Usernames (resolver needed) |
-| **Reply Quotes** | Posts replies under a tweet with @mentions | Usernames (resolver needed) |
-| **Wall Posts** | Posts text on multiple accounts' timelines | Usernames (resolver needed) |
+| Mode | Notification Type | Visibility | Best For |
+|------|------------------|------------|----------|
+| **Image Tags** | "You were tagged in a photo" | High — image previews stand out | Maximum attention, visual content |
+| **Quote Tags** | "Quoted your tweet" + mention | High — appears as a quote tweet | Promoting a specific tweet with context |
+| **Reply Quotes** | "Mentioned you in a reply" | Medium — inside a thread | Engaging in existing conversations |
+| **Wall Posts** | "Mentioned you" | Medium — standalone tweet | Broadcasting a message to many users |
+
+### Typical Workflow
+
+<Steps>
+  <Step title="Scrape targets">
+    Use the **Scraping** module to collect usernames from followers, communities, or DexScreener token holders.
+  </Step>
+  <Step title="Choose a mode">
+    Pick the mention mode that fits your campaign — image tags for maximum impact, quote tags to promote a specific tweet, etc.
+  </Step>
+  <Step title="Select token group">
+    Choose which accounts will do the mentioning. Use the **Token Manager** to organize them into groups.
+  </Step>
+  <Step title="Write your text and load targets">
+    Write the tweet text and load the list of @usernames to mention.
+  </Step>
+  <Step title="Launch">
+    Start the campaign. Your accounts distribute the mentions across the target list automatically.
+  </Step>
+</Steps>
+
+<Warning>
+  Always use **proxies** with your accounts. Mass mentioning without proxies will lead to account restrictions. See [Token Manager — Proxies](/token-manager/proxies).
+</Warning>
