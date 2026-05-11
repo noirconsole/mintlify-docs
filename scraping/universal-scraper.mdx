@@ -1,11 +1,11 @@
 ---
 title: "Universal Scraper"
-description: "Scrape from any X page — communities, lists, search results"
+description: "Scrape users from any X URL — retweeters, quoters, commenters, search results, and more"
 ---
 
-## Universal Scraper (Any Page)
+## Universal Scraper
 
-The Universal Scraper works with any X URL — not just follower lists. Use it to scrape members from communities, participants in conversations, users in lists, or search results.
+The Universal Scraper works with **any X URL**. Just paste the right link and it will scrape all users from that page — retweeters, quoters, commenters, search results, list members, and more.
 
 <Frame>
   <img src="/images/universal-scraper.png" alt="Universal Scraper page" />
@@ -18,29 +18,47 @@ The Universal Scraper works with any X URL — not just follower lists. Use it t
     Choose a group from Token Manager for scraping.
   </Step>
   <Step title="Paste URLs">
-    Enter one or more X URLs to scrape. These can be:
-    - Community pages
-    - List pages
-    - Search result URLs
-    - Any X page with user content
+    Enter one or more X URLs. The scraper detects what's on the page and collects all users.
   </Step>
   <Step title="Start">
     Click **Start** to begin scraping.
   </Step>
   <Step title="Download">
-    Download the results when complete.
+    Download the results as a `.txt` file.
   </Step>
 </Steps>
 
-### Common Use Cases
+### URL Examples
 
-| Source | What you get |
-|--------|-------------|
-| Community URL | Community members and recent posters |
-| List URL | All users in the list |
-| Search URL | Users from search results |
-| DexScreener export links | Members of token communities |
+The key is using the right URL for what you want to scrape:
+
+| URL format | What it scrapes |
+|------------|----------------|
+| `x.com/username` | Account's followers |
+| `x.com/username/status/123456` | Users who **commented** on the tweet |
+| `x.com/username/status/123456/retweets` | Users who **retweeted** |
+| `x.com/username/status/123456/quotes` | Users who **quoted** the tweet |
+| `x.com/username/status/123456/likes` | Users who **liked** the tweet |
+| `x.com/search?q=keyword` | Users from **search results** |
+| `x.com/i/lists/123456/members` | **Members** of an X list |
+
+### Examples
+
+To scrape everyone who quoted a specific tweet:
+```
+https://x.com/bonk/status/349434030493945/quotes
+```
+
+To scrape everyone who retweeted it:
+```
+https://x.com/bonk/status/349434030493945/retweets
+```
+
+To scrape everyone who commented:
+```
+https://x.com/bonk/status/349434030493945
+```
 
 <Tip>
-  Combine with DexScreener: export token community links from DexScreener → paste into Universal Scraper → get community member lists for DM campaigns.
+  Combine with DexScreener: find token communities → scrape their followers and engagement → use for DM campaigns, quoting, or SMM.
 </Tip>

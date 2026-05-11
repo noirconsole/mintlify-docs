@@ -1,25 +1,47 @@
 ---
 title: "Warmer"
-description: "Warm up accounts with natural activity to maintain account health"
+description: "Warm up accounts with natural activity to maintain health"
 ---
 
-## Overview
+## Warmer
 
 The Warmer simulates natural account activity — browsing, liking, and interacting — to keep your accounts healthy and avoid restrictions from X's anti-bot systems.
 
-<CardGroup cols={2}>
-  <Card title="Warming Accounts" icon="fire" href="/warmer/warming-accounts">
-    Configure and run warming tasks.
-  </Card>
-  <Card title="Multi-Task" icon="list-check" href="/warmer/multi-task">
-    Manage multiple warming tasks simultaneously.
-  </Card>
-</CardGroup>
+<Frame>
+  <img src="/images/warmer.png" alt="Warmer page" />
+</Frame>
 
-### Why Warm Accounts?
+### Why Warm Accounts
 
 New or inactive accounts are more likely to be flagged by X. The Warmer makes your accounts look active and natural before using them for campaigns.
 
 <Warning>
   **Warm accounts before heavy use.** Using fresh accounts for DM sending or mass following without warming increases the risk of bans.
 </Warning>
+
+### How to Use
+
+<Steps>
+  <Step title="Set up warmer accounts">
+    Go to **Warmer → Accounts** to configure which accounts will be warmed and assign proxies to each one.
+  </Step>
+  <Step title="Create a warming task">
+    On the Dashboard, create a new task — select accounts and set activity parameters.
+  </Step>
+  <Step title="Start">
+    Launch the task. Accounts begin performing natural-looking activity (browsing timelines, liking tweets).
+  </Step>
+  <Step title="Monitor">
+    Track progress on the dashboard via task cards showing status, account count, and progress.
+  </Step>
+</Steps>
+
+### Multi-Task
+
+You can run multiple warming tasks simultaneously — each targeting different account groups with different parameters. Tasks appear as cards on the dashboard where you can pause, resume, edit, or delete them.
+
+Tasks persist across server restarts and resume automatically.
+
+<Tip>
+  Warm new accounts for at least a few days before using them for campaigns. The longer the warm-up, the safer the accounts.
+</Tip>

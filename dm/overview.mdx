@@ -5,14 +5,14 @@ description: "Bulk direct message outreach with templates and multi-account send
 
 ## Overview
 
-The DM module is a full outreach engine — attach accounts, build target lists, create templates, send in bulk, and monitor replies through the inbox.
+The DM module is a full outreach engine — attach accounts, build target lists, create templates, send in bulk, and monitor replies through Multichat.
 
 <CardGroup cols={3}>
   <Card title="Accounts" icon="user-plus" href="/dm/attaching-accounts">
     Attach and manage DM sender accounts.
   </Card>
   <Card title="Checker" icon="circle-check" href="/dm/checker">
-    Check which accounts can send DMs.
+    Filter your target database to only users with open DMs.
   </Card>
   <Card title="Targets" icon="crosshairs" href="/dm/targets">
     Load and manage recipient lists.
@@ -23,7 +23,7 @@ The DM module is a full outreach engine — attach accounts, build target lists,
   <Card title="Bulk Sender" icon="paper-plane" href="/dm/bulk-sending">
     Send messages to thousands of targets.
   </Card>
-  <Card title="Inbox" icon="inbox" href="/dm/inbox">
+  <Card title="Multichat" icon="inbox" href="/dm/inbox">
     Read and manage replies from recipients.
   </Card>
 </CardGroup>
@@ -32,25 +32,21 @@ The DM module is a full outreach engine — attach accounts, build target lists,
 
 <Steps>
   <Step title="Attach DM accounts">
-    Add accounts that will send the messages. These need active DM permissions.
+    Add accounts that will send the messages.
   </Step>
-  <Step title="Check accounts">
-    Run the DM Checker to verify which accounts can actually send DMs.
+  <Step title="Check your targets">
+    Run the DM Checker on your target database to filter only users with open DMs.
   </Step>
   <Step title="Load targets">
-    Upload user IDs from Scraping/Resolver, or load them manually.
+    Upload the filtered user IDs into Targets.
   </Step>
   <Step title="Create templates">
-    Write message templates with optional variables.
+    Write message templates with optional variations.
   </Step>
   <Step title="Send">
     Launch the bulk sender — messages go out across all your DM accounts.
   </Step>
-  <Step title="Monitor inbox">
+  <Step title="Monitor Multichat">
     Check replies and engage with interested users.
   </Step>
 </Steps>
-
-<Warning>
-  **Use proxies and verified DM accounts.** DM sending is the most sensitive action on X. Accounts without proxies or without DM permission will fail or get banned.
-</Warning>

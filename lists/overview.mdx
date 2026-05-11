@@ -1,17 +1,49 @@
 ---
 title: "Lists Tracker"
-description: "Track X lists and view a real-time feed"
+description: "Track X lists and view a real-time feed of posts"
 ---
 
-## Overview
+## Lists Tracker
 
-The Lists Tracker lets you monitor X lists in real-time. It shows a feed of posts from tracked lists with full quote tweet and retweet cards, expanded URLs, and social context.
+The Lists Tracker monitors X lists in real-time and shows you a unified feed of all posts from tracked lists. It works like a custom X timeline built from lists you choose.
 
-<CardGroup cols={2}>
-  <Card title="Tracking Lists" icon="plus" href="/lists/tracking-lists">
-    Add and manage tracked X lists.
-  </Card>
-  <Card title="Feed View" icon="newspaper" href="/lists/feed-view">
-    Browse the live feed from your tracked lists.
-  </Card>
-</CardGroup>
+<Frame>
+  <img src="/images/lists-tracker.png" alt="Lists Tracker page" />
+</Frame>
+
+### Why Use Lists Tracker
+
+- **Monitor competitors** — create or follow X lists with competitor accounts, track their posts in real-time
+- **Find content** — discover tweets worth engaging with (quoting, replying, raiding)
+- **Research** — keep an eye on specific communities, influencers, or niches
+
+### How to Use
+
+<Steps>
+  <Step title="Get a list URL">
+    Find or create an X list and copy its URL.
+  </Step>
+  <Step title="Add list to tracker">
+    Paste the list URL into the tracker. The system starts polling it for new posts.
+  </Step>
+  <Step title="Browse the feed">
+    Posts from all tracked lists appear in a unified feed — newest first.
+  </Step>
+</Steps>
+
+### Feed View
+
+Each post in the feed shows:
+- **Author** — profile picture, display name, username
+- **Post text** — full content with expanded URLs
+- **Media** — images and videos
+- **Quote tweet cards** — if the post quotes another tweet, it's shown inline
+- **Retweet cards** — retweets show the original content
+- **Engagement stats** — likes, retweets, replies
+- **Timestamp** — when the post was made
+
+You can track multiple lists simultaneously. Remove lists you no longer need at any time.
+
+<Info>
+  Lists Tracker requires a valid account token for API access. Make sure you have accounts loaded in Token Manager.
+</Info>

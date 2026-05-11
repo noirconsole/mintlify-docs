@@ -1,38 +1,34 @@
 ---
 title: "Scraping"
-description: "Scrape followers, community members, and resolve usernames to IDs"
+description: "Scrape users from any X page — followers, retweeters, commenters, search results, and more"
 ---
 
 ## Overview
 
-The Scraping module lets you build target lists for DM campaigns and other outreach. You can scrape followers from any X account, extract members from any X page, and resolve usernames into user IDs.
+The Scraping module lets you collect usernames and user IDs from X. Use the scraped data for DM campaigns, quoting, reply quotes, or any other feature that requires a list of users.
 
 <CardGroup cols={3}>
   <Card title="Followers" icon="users" href="/scraping/followers-scraper">
     Scrape followers from any X account.
   </Card>
-  <Card title="Any Page (Universal)" icon="globe" href="/scraping/universal-scraper">
-    Scrape from any X URL — communities, lists, search results.
+  <Card title="Universal" icon="globe" href="/scraping/universal-scraper">
+    Scrape from any X URL — retweeters, quoters, commenters, search results, anything.
   </Card>
   <Card title="Resolver" icon="magnifying-glass" href="/scraping/resolver">
-    Convert usernames to user IDs for DM targeting.
+    Convert IDs to usernames (or usernames to IDs).
   </Card>
 </CardGroup>
 
-### How Scraping Feeds Other Modules
+### How Scraping Connects to Other Modules
 
-Scraping is typically the second step in a campaign workflow:
+Scraped data flows into multiple modules depending on what you need:
 
 ```
-DexScreener → find token community
-            ↓
-Scraping → scrape their followers/members
-            ↓
-Resolver → convert usernames to IDs
-            ↓
-DM → load targets and send messages
+Scraping → IDs     → Bulk DM Sender (uses IDs directly)
+Scraping → IDs     → Image Tags in Quoting (uses IDs directly)
+Scraping → IDs     → Resolver (ID → username) → Quote Tags, Reply Quotes, Wall Posts, SMM
 ```
 
 <Info>
-  Scraped data is exported as downloadable files. You can then upload these files into the DM Targets page or use them for other modules.
+  The scraper primarily outputs `.txt` files with user IDs. Some modules use IDs directly (Bulk DM, Image Tags), but most other modes need **usernames**. Use the Resolver to convert IDs to usernames when needed.
 </Info>

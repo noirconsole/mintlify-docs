@@ -1,15 +1,34 @@
 ---
 title: "Resolver"
-description: "Convert usernames to user IDs for DM targeting"
+description: "Convert between user IDs and usernames"
 ---
 
 ## Resolver
 
-The Resolver converts X usernames (screen names) into numeric user IDs. This is needed because DM targeting and some other operations require user IDs, not usernames.
+The Resolver converts between user IDs and usernames. This is a necessary step because different modules require different formats.
 
 <Frame>
   <img src="/images/resolver.png" alt="Resolver page" />
 </Frame>
+
+### Why You Need the Resolver
+
+The Scraper outputs `.txt` files with **user IDs** (numeric). But not all modules accept IDs:
+
+| Module | Accepts |
+|--------|---------|
+| **Bulk DM Sender** | IDs directly — no resolver needed |
+| **Image Tags** (Quoting) | IDs directly — no resolver needed |
+| **Quote Tags** | Usernames — **resolver needed** |
+| **Reply Quotes** | Usernames — **resolver needed** |
+| **Wall Posts** | Usernames — **resolver needed** |
+| **SMM Follow** | Usernames — **resolver needed** |
+
+So the typical flow is:
+
+```
+Scraper → IDs (.txt) → Resolver (ID → username) → Quoting / SMM / etc.
+```
 
 ### How to Use
 
@@ -17,27 +36,17 @@ The Resolver converts X usernames (screen names) into numeric user IDs. This is 
   <Step title="Select token group">
     Choose a group from Token Manager. These accounts perform the resolution lookups.
   </Step>
-  <Step title="Load usernames">
-    Upload a file with usernames (one per line) or paste them directly. The Resolver accepts large lists — hundreds of thousands of targets.
+  <Step title="Load IDs or usernames">
+    Upload a file or paste the data. The Resolver accepts large lists — hundreds of thousands of entries.
   </Step>
   <Step title="Start resolving">
-    Click **Start**. The resolver processes usernames in bulk, converting each to a user ID.
+    Click **Start**. The resolver processes entries in bulk.
   </Step>
   <Step title="Download results">
-    Download the resolved user IDs. These are ready to use as DM targets.
+    Download the converted data — ready to use in other modules.
   </Step>
 </Steps>
 
-### Typical Flow
-
-```
-Scraping (usernames) → Resolver (convert to IDs) → DM Targets (upload IDs)
-```
-
 <Info>
-  Some usernames may fail to resolve — the account might be suspended, deactivated, or the username changed. Failed entries are reported separately.
+  Some entries may fail to resolve — the account might be suspended, deactivated, or changed. Failed entries are reported separately.
 </Info>
-
-<Warning>
-  Resolution speed depends on X's rate limits (~4 lookups/second per account). For large lists (100k+), use a bigger token group and proxies to speed things up.
-</Warning>

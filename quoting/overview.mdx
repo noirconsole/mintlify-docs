@@ -5,13 +5,13 @@ description: "Quote tweets, reply quotes, image tags, and wall posts for maximum
 
 ## Overview
 
-The Quoting module offers multiple engagement modes — all designed to increase visibility and drive engagement to tweets. Each mode works differently and serves a different purpose.
+The Quoting module offers multiple engagement modes — all designed to increase visibility and drive engagement to tweets or accounts.
 
 <CardGroup cols={2}>
-  <Card title="Image Tags" icon="image" href="/quoting/quote-tags">
+  <Card title="Image Tags" icon="image" href="/quoting/image-tags">
     Tag users in image tweets for notification-based outreach.
   </Card>
-  <Card title="Quote Tags" icon="quote-left" href="/quoting/quote-tags">
+  <Card title="Quote Tags" icon="quote" href="/quoting/quote-tags">
     Quote tweet with tags to amplify reach.
   </Card>
   <Card title="Reply Quotes" icon="reply" href="/quoting/reply-quotes">
@@ -24,9 +24,9 @@ The Quoting module offers multiple engagement modes — all designed to increase
 
 ### When to Use Each Mode
 
-| Mode | Best For |
-|------|----------|
-| **Image Tags** | Getting attention via image tag notifications |
-| **Quote Tags** | Amplifying a tweet by quoting it from many accounts |
-| **Reply Quotes** | Engaging in tweet conversations with mentions |
-| **Wall Posts** | Broadcasting a message across many account timelines |
+| Mode | What it does | Input format |
+|------|-------------|-------------|
+| **Image Tags** | Posts an image and tags users in it — they get a notification | User IDs (directly from scraper) |
+| **Quote Tags** | Quote-tweets a target tweet from multiple accounts with @mentions | Usernames (resolver needed) |
+| **Reply Quotes** | Posts replies under a tweet with @mentions | Usernames (resolver needed) |
+| **Wall Posts** | Posts text on multiple accounts' timelines | Usernames (resolver needed) |

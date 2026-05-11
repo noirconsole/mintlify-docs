@@ -1,37 +1,46 @@
 ---
 title: "Posting Tool"
-description: "Post from your main account with automatic boost from your account pool"
+description: "Post to your wall and instantly boost for Top of Search visibility"
 ---
 
-## Overview
+## Posting Tool (Post & Boost)
 
-The Posting Tool (Post & Boost) lets you post content from your main account and automatically boost it with likes/retweets from your account pool. This is the core content distribution feature.
+The Posting Tool publishes a post from your main account and **instantly boosts it** with likes and retweets from your account pool. The goal is to push your post to the **Top of Search** on X.
 
-<CardGroup cols={3}>
-  <Card title="Creating Posts" icon="pen" href="/posting-tool/creating-posts">
-    Write and publish posts with text and images.
-  </Card>
-  <Card title="Boost Groups" icon="rocket" href="/posting-tool/boost-groups">
-    Configure which accounts boost your posts.
-  </Card>
-  <Card title="Task Management" icon="list-check" href="/posting-tool/task-management">
-    Manage, pause, resume, and track posting tasks.
-  </Card>
-</CardGroup>
+<Frame>
+  <img src="/images/posting-tool.png" alt="Posting Tool page" />
+</Frame>
 
-### How It Works
+### Why This Works
+
+When you include hashtags or cashtags in your post (e.g., **$JUP**, **$AURA**, **#crypto**), X indexes it in search results. If your post gets immediate engagement (likes + retweets from your boost pool), it rises to the **top of search results** for that tag.
+
+**Example:** You post a tweet containing `$JUP` → your boost pool instantly likes and retweets it → when someone searches `$JUP` on X, your post appears at the top.
+
+<Tip>
+  Use cashtags like **$JUP**, **$AURA**, **$SOL** or hashtags like **#memecoin** in your posts. The boost pushes them to the top of search, making your content visible to everyone searching for that token or topic.
+</Tip>
+
+### How to Use
 
 <Steps>
   <Step title="Select your main account">
-    Choose the account that will publish the post. You can select from a dropdown or paste a token directly.
+    Choose the account that will publish the post — either from the dropdown or paste a token directly.
   </Step>
-  <Step title="Configure boost groups">
-    Select which account groups will automatically like and retweet your post after publishing.
+  <Step title="Select boost group">
+    Choose a token group that will automatically like and retweet your post after publishing.
   </Step>
   <Step title="Write your post">
-    Add text and optionally attach images.
+    Enter the post text. Include `$cashtags` or `#hashtags` for search visibility. Optionally attach images.
   </Step>
   <Step title="Post & Boost">
-    The tool publishes from your main account, then triggers the boost group to engage with it.
+    Click **Post**. The tool publishes from your main account, then your boost group immediately engages with it.
   </Step>
 </Steps>
+
+### Task Management
+
+Each post creates a task that you can manage:
+- **Pause / Resume** — temporarily stop or continue boost operations
+- **Stop** — cancel a task entirely
+- Tasks persist across server restarts — they resume automatically

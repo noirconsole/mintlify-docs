@@ -35,7 +35,6 @@
         "icon": "rocket",
         "expanded": true,
         "pages": [
-          "getting-started/introduction",
           "getting-started/login",
           "getting-started/interface-overview"
         ]
@@ -107,6 +106,7 @@
         "expanded": true,
         "pages": [
           "quoting/overview",
+          "quoting/image-tags",
           "quoting/quote-tags",
           "quoting/reply-quotes",
           "quoting/wall-posts"
@@ -117,10 +117,7 @@
         "icon": "send",
         "expanded": true,
         "pages": [
-          "posting-tool/overview",
-          "posting-tool/creating-posts",
-          "posting-tool/boost-groups",
-          "posting-tool/task-management"
+          "posting-tool/overview"
         ]
       },
       {
@@ -128,9 +125,7 @@
         "icon": "list",
         "expanded": true,
         "pages": [
-          "lists/overview",
-          "lists/tracking-lists",
-          "lists/feed-view"
+          "lists/overview"
         ]
       },
       {
@@ -138,9 +133,7 @@
         "icon": "flame",
         "expanded": true,
         "pages": [
-          "warmer/overview",
-          "warmer/warming-accounts",
-          "warmer/multi-task"
+          "warmer/overview"
         ]
       }
     ]

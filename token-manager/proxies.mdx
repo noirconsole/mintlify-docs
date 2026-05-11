@@ -1,17 +1,21 @@
 ---
 title: "Proxies"
-description: "Why and how to use proxies with your accounts"
+description: "How proxies work in Noir Console"
 ---
 
-## Why Proxies Matter
+## How Proxies Work
 
-<Warning>
-  **This is critical.** Running multiple X accounts from the same IP address is the #1 reason accounts get banned. Proxies are not optional — they are essential for any serious operation.
-</Warning>
+Noir Console supports proxies in every module. You don't need to assign a proxy to each individual account in Token Manager — instead, **you set proxies directly in the module you're working with**.
 
-When you run multiple accounts without proxies, X sees all of them coming from the same IP. This is a clear signal of automation, and X will ban or restrict those accounts.
+Each module (SMM, Quoting, Scraping, Posting Tool, etc.) has its own proxy input field where you can paste proxies for that specific operation.
 
-**Proxies give each account (or group of accounts) a unique IP address**, making activity look natural.
+### Per-Account Proxies
+
+There are only two sections where proxies are tied to individual accounts:
+- **DM** — each DM sender account has its own proxy
+- **Warmer** — each warmer account has its own proxy
+
+This is because DM sending and account warming are long-running operations where each account needs a persistent, unique connection.
 
 ## Proxy Types
 
@@ -28,7 +32,7 @@ When you run multiple accounts without proxies, X sees all of them coming from t
 
 ## Proxy Formats
 
-Noir Console supports these proxy formats:
+Noir Console supports these formats:
 
 ```
 http://ip:port
@@ -36,27 +40,3 @@ http://username:password@ip:port
 socks5://ip:port
 socks5://username:password@ip:port
 ```
-
-## How to Assign Proxies
-
-Proxies are assigned in the **Token Manager Pool**:
-
-1. **During import** — paste tokens with proxies: `auth_token:proxy` or `auth_token|proxy`
-2. **Per account** — edit proxy directly in the pool table
-
-## Best Practices
-
-<AccordionGroup>
-  <Accordion title="One proxy per 1-3 accounts">
-    Don't overload a single proxy with too many accounts. Spread your accounts across multiple proxy IPs.
-  </Accordion>
-  <Accordion title="Use residential for DMs and follows">
-    DM sending and following are the most sensitive actions. Use residential or mobile proxies for these.
-  </Accordion>
-  <Accordion title="Test proxies before campaigns">
-    Make sure your proxies are working before starting a campaign. A dead proxy means failed operations and wasted time.
-  </Accordion>
-  <Accordion title="Rotate proxies periodically">
-    If you notice accounts getting restricted, try rotating to fresh proxy IPs.
-  </Accordion>
-</AccordionGroup>
