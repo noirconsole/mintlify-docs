@@ -1,0 +1,39 @@
+---
+title: "Targets"
+description: "Load and manage DM recipient lists"
+---
+
+## DM Targets
+
+The Targets page is where you manage the list of users who will receive your direct messages.
+
+<Frame>
+  <img src="/images/dm-targets.png" alt="DM Targets page" />
+</Frame>
+
+### Loading Targets
+
+You can load targets in several ways:
+
+- **Upload a file** — upload a text file with user IDs (one per line)
+- **From Scraping** — use exported files from the Scraping/Resolver modules
+
+<Info>
+  Targets should be **user IDs** (numeric), not usernames. If you have usernames, use the **Resolver** in the Scraping module to convert them first.
+</Info>
+
+### Target Management
+
+- View total target count
+- Clear targets list
+- Targets are automatically cleared after a campaign starts (the active list is consumed during sending)
+
+### Typical Flow
+
+```
+Scraping → Resolver → DM Targets → Bulk Send
+```
+
+<Tip>
+  For large campaigns (100k+ targets), upload via file rather than pasting. The file upload handles large lists efficiently.
+</Tip>

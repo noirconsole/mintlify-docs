@@ -1,0 +1,38 @@
+---
+title: "Scraping"
+description: "Scrape followers, community members, and resolve usernames to IDs"
+---
+
+## Overview
+
+The Scraping module lets you build target lists for DM campaigns and other outreach. You can scrape followers from any X account, extract members from any X page, and resolve usernames into user IDs.
+
+<CardGroup cols={3}>
+  <Card title="Followers" icon="users" href="/scraping/followers-scraper">
+    Scrape followers from any X account.
+  </Card>
+  <Card title="Any Page (Universal)" icon="globe" href="/scraping/universal-scraper">
+    Scrape from any X URL — communities, lists, search results.
+  </Card>
+  <Card title="Resolver" icon="magnifying-glass" href="/scraping/resolver">
+    Convert usernames to user IDs for DM targeting.
+  </Card>
+</CardGroup>
+
+### How Scraping Feeds Other Modules
+
+Scraping is typically the second step in a campaign workflow:
+
+```
+DexScreener → find token community
+            ↓
+Scraping → scrape their followers/members
+            ↓
+Resolver → convert usernames to IDs
+            ↓
+DM → load targets and send messages
+```
+
+<Info>
+  Scraped data is exported as downloadable files. You can then upload these files into the DM Targets page or use them for other modules.
+</Info>

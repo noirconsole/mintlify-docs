@@ -1,0 +1,47 @@
+---
+title: "Bulk Sender"
+description: "Send DMs to thousands of targets at scale"
+---
+
+## Bulk Sender
+
+The Bulk Sender is the core of the DM module — it sends your template messages to all loaded targets using your DM accounts.
+
+<Frame>
+  <img src="/images/dm-bulk.png" alt="DM Bulk Sender page" />
+</Frame>
+
+### How to Use
+
+<Steps>
+  <Step title="Ensure prerequisites">
+    Before sending, make sure you have:
+    - DM accounts attached and checked (DM → Accounts + Checker)
+    - Targets loaded (DM → Targets)
+    - At least one template created (DM → Templates)
+  </Step>
+  <Step title="Select template">
+    Choose which message template to send.
+  </Step>
+  <Step title="Start sending">
+    Click **Start**. Messages are distributed across all your DM accounts automatically.
+  </Step>
+  <Step title="Monitor progress">
+    Watch the live progress — sent, failed, and remaining counts update in real-time.
+  </Step>
+</Steps>
+
+### How It Works
+
+The bulk sender distributes the workload across all your DM accounts:
+- Each account sends messages simultaneously in each round
+- All accounts fire at the same time per round, then wait for the next interval
+- Failed messages are tracked separately
+
+<Warning>
+  **Sending speed is limited by X.** Don't expect thousands of DMs per minute — X throttles DM sending. Be patient and let the tool work at a sustainable pace to avoid account bans.
+</Warning>
+
+### Monitoring
+
+Use the **Live Logs** panel (toggle in the header) to see detailed sending progress, including per-account status and any errors.

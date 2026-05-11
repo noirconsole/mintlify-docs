@@ -1,0 +1,74 @@
+---
+title: "Pool"
+description: "Load, validate, and manage your account tokens"
+---
+
+## Account Pool
+
+The Pool page is where all your X accounts live. From here you can add accounts, check their status, assign proxies, and export valid tokens.
+
+<Frame>
+  <img src="/images/token-pool.png" alt="Token Manager Pool page" />
+</Frame>
+
+## Adding Accounts
+
+Click the **Add accounts** button to open the import dialog. Paste your auth_tokens — one per line:
+
+```
+a1b2c3d4e5f6g7h8i9j0...
+k1l2m3n4o5p6q7r8s9t0...
+```
+
+<Info>
+  You can also paste tokens with proxies in the format: `token:proxy` or `token|proxy`. The proxy will be automatically assigned to that account.
+</Info>
+
+## Account Status
+
+Each account in the pool has a status:
+
+| Status | Meaning |
+|--------|---------|
+| **Valid** | Token is active, account is accessible |
+| **Invalid** | Token expired or account is suspended |
+| **Unchecked** | Token hasn't been validated yet |
+
+## Validating Accounts
+
+Click **Validate All** to check the status of every account in the pool. Validation connects to X and verifies each token is still active.
+
+<Warning>
+  Validation makes real API calls to X. If you have many accounts and no proxies assigned, this may trigger rate limits. **Assign proxies first** for large pools.
+</Warning>
+
+After validation, you can use **Remove Invalid** to clean up expired tokens.
+
+## Filtering
+
+Use the filters at the top of the page to narrow down your view:
+- **Status filter** — show All, Valid, Invalid, or Unchecked accounts
+- **Search** — find accounts by keyword
+- **Group filter** — show only accounts belonging to a specific group
+
+## Exporting
+
+Click **Export Valid** to download all valid account tokens as a text file.
+
+## Proxies
+
+<Warning>
+  **We strongly recommend assigning proxies to every account.** Running accounts without proxies dramatically increases the risk of bans, especially during bulk operations like DM sending, liking, or following.
+</Warning>
+
+Proxies can be assigned:
+- During import (paste as `token:proxy` or `token|proxy`)
+- Individually per account in the pool table
+
+Supported proxy formats:
+```
+http://ip:port
+http://user:pass@ip:port
+socks5://ip:port
+socks5://user:pass@ip:port
+```

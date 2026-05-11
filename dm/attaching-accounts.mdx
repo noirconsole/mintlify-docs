@@ -1,0 +1,38 @@
+---
+title: "Accounts"
+description: "Attach and manage DM sender accounts"
+---
+
+## DM Accounts
+
+Before sending DMs, you need to attach accounts that will be used as senders. These are separate from your main Token Manager pool — DM accounts need special configuration.
+
+<Frame>
+  <img src="/images/dm-accounts.png" alt="DM Accounts page" />
+</Frame>
+
+### Attaching Accounts
+
+<Steps>
+  <Step title="Open DM → Accounts">
+    Navigate to the DM section and click Accounts.
+  </Step>
+  <Step title="Add accounts">
+    Paste auth_tokens of accounts you want to use for DM sending.
+  </Step>
+  <Step title="Verify">
+    Run the DM Checker to confirm which accounts have active DM permissions.
+  </Step>
+</Steps>
+
+<Info>
+  Not all X accounts can send DMs freely. Some accounts have DM restrictions due to age, activity level, or X's internal rules. Use the Checker to filter out restricted accounts.
+</Info>
+
+### Account Status
+
+Each DM account shows its current state — whether it's verified for sending, has errors, or needs checking.
+
+<Warning>
+  **Always use proxies with DM accounts.** DM sending triggers the strictest anti-spam filters on X. Accounts sending DMs without proxies will get restricted very quickly.
+</Warning>

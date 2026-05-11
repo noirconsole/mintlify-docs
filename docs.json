@@ -1,12 +1,12 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "name": "Noir Console",
+  "description": "User manual for Noir Console — X (Twitter) marketing automation platform",
   "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
+    "primary": "#8B5CF6",
+    "light": "#A78BFA",
+    "dark": "#7C3AED"
   },
   "favicon": "/favicon.ico",
   "icons": {
@@ -25,53 +25,122 @@
           "anchor": "Home",
           "icon": "house",
           "href": "/"
-        },
-        {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
-          "anchor": "Help",
-          "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
         }
       ]
     },
     "directory": "card",
     "groups": [
       {
-        "group": "Platform",
-        "icon": "layers",
+        "group": "Getting Started",
+        "icon": "rocket",
         "expanded": true,
         "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+          "getting-started/introduction",
+          "getting-started/login",
+          "getting-started/interface-overview"
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
+        "group": "Token Manager",
+        "icon": "key-round",
         "expanded": true,
         "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
+          "token-manager/overview",
+          "token-manager/loading-accounts",
+          "token-manager/groups",
+          "token-manager/unlocker",
+          "token-manager/profile-changer",
+          "token-manager/proxies"
         ]
       },
       {
-        "group": "Integrations",
-        "icon": "plug",
+        "group": "DexScreener",
+        "icon": "chart-line",
         "expanded": true,
         "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+          "dexscreener/overview",
+          "dexscreener/new-listings",
+          "dexscreener/trending",
+          "dexscreener/export-settings"
+        ]
+      },
+      {
+        "group": "Scraping",
+        "icon": "download",
+        "expanded": true,
+        "pages": [
+          "scraping/overview",
+          "scraping/followers-scraper",
+          "scraping/universal-scraper",
+          "scraping/resolver"
+        ]
+      },
+      {
+        "group": "DM (Direct Messages)",
+        "icon": "mail",
+        "expanded": true,
+        "pages": [
+          "dm/overview",
+          "dm/attaching-accounts",
+          "dm/checker",
+          "dm/targets",
+          "dm/templates",
+          "dm/bulk-sending",
+          "dm/inbox"
+        ]
+      },
+      {
+        "group": "SMM",
+        "icon": "heart",
+        "expanded": true,
+        "pages": [
+          "smm/overview",
+          "smm/raids",
+          "smm/auto-mode",
+          "smm/follow",
+          "smm/f4f"
+        ]
+      },
+      {
+        "group": "Quoting",
+        "icon": "quote",
+        "expanded": true,
+        "pages": [
+          "quoting/overview",
+          "quoting/quote-tags",
+          "quoting/reply-quotes",
+          "quoting/wall-posts"
+        ]
+      },
+      {
+        "group": "Posting Tool",
+        "icon": "send",
+        "expanded": true,
+        "pages": [
+          "posting-tool/overview",
+          "posting-tool/creating-posts",
+          "posting-tool/boost-groups",
+          "posting-tool/task-management"
+        ]
+      },
+      {
+        "group": "Lists Tracker",
+        "icon": "list",
+        "expanded": true,
+        "pages": [
+          "lists/overview",
+          "lists/tracking-lists",
+          "lists/feed-view"
+        ]
+      },
+      {
+        "group": "Warmer",
+        "icon": "flame",
+        "expanded": true,
+        "pages": [
+          "warmer/overview",
+          "warmer/warming-accounts",
+          "warmer/multi-task"
         ]
       }
     ]
@@ -84,14 +153,13 @@
     "links": [],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Access",
+      "href": "https://noirconsole.com"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
+      "x": "https://x.com/noirconsole"
     }
   }
 }

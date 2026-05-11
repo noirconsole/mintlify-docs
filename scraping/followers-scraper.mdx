@@ -1,0 +1,39 @@
+---
+title: "Followers Scraper"
+description: "Scrape followers from any X account"
+---
+
+## Followers Scraper
+
+Scrape the follower list of any public X account. This is the primary way to build target lists for DM campaigns.
+
+<Frame>
+  <img src="/images/followers-scraper.png" alt="Followers Scraper page" />
+</Frame>
+
+### How to Use
+
+<Steps>
+  <Step title="Select token group">
+    Choose a group from Token Manager. These accounts are used to perform the scraping.
+  </Step>
+  <Step title="Enter target account">
+    Paste the username or profile URL of the account whose followers you want to scrape.
+  </Step>
+  <Step title="Start scraping">
+    Click **Start**. The scraper will collect followers using your selected accounts.
+  </Step>
+  <Step title="Download results">
+    Once complete, download the scraped usernames/IDs as a file.
+  </Step>
+</Steps>
+
+<Warning>
+  **Use proxies on your scraping accounts.** Scraping makes many API calls and can trigger rate limits if all requests come from one IP.
+</Warning>
+
+### Tips
+
+- Larger accounts (100k+ followers) take longer — the scraper paginates through the full list
+- Use multiple accounts in your scraping group to speed up the process
+- Scraped data can be fed directly into the **Resolver** (to get user IDs) or into **DM Targets**

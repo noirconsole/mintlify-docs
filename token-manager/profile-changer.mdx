@@ -1,0 +1,49 @@
+---
+title: "Profile Changer"
+description: "Change display names and avatars across multiple accounts at once"
+---
+
+## What Is Profile Changer?
+
+Profile Changer lets you update display names and profile pictures (avatars) across many accounts in a single operation.
+
+**Use cases:**
+- Giving your boost accounts unique-looking profiles
+- Refreshing account identities for new campaigns
+- Making accounts look more natural with real names and photos
+
+## How to Use
+
+<Steps>
+  <Step title="Select token source">
+    Choose how to select accounts:
+    - **Select Group** — pick a group from the dropdown
+    - **Paste Tokens** — paste auth_tokens directly
+  </Step>
+  <Step title="Add display names">
+    Enter names in the text area — one name per line. Names are assigned to accounts in order.
+    ```
+    John Smith
+    Alex Johnson
+    Maria Garcia
+    ```
+  </Step>
+  <Step title="Upload avatars (optional)">
+    Upload multiple image files. Avatars are assigned to accounts in order, matching the name list.
+  </Step>
+  <Step title="Start">
+    Click **Start** to begin the bulk profile update. The progress counter shows success/failed/total.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/profile-changer.png" alt="Profile Changer page" />
+</Frame>
+
+<Info>
+  The token count indicator shows how many accounts will be updated, and how many names you've provided. Make sure the numbers match.
+</Info>
+
+<Warning>
+  Profile changes are visible immediately on X. Changing too many profiles too quickly without proxies may trigger rate limits.
+</Warning>

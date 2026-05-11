@@ -1,0 +1,52 @@
+---
+title: "Token Manager"
+description: "Manage your X accounts — the first step before using any module"
+---
+
+## Overview
+
+Token Manager is the central hub for all your X (Twitter) accounts. Every other module in Noir Console depends on it — you need to load accounts here before you can post, send DMs, boost, or do anything else.
+
+<Warning>
+  **This is the first thing you should set up.** No module will work without accounts loaded into Token Manager.
+</Warning>
+
+### What you can do
+
+<CardGroup cols={2}>
+  <Card title="Pool" icon="database" href="/token-manager/loading-accounts">
+    Load, validate, and manage your account tokens.
+  </Card>
+  <Card title="Groups" icon="layer-group" href="/token-manager/groups">
+    Organize accounts into reusable groups for different campaigns.
+  </Card>
+  <Card title="Unlocker" icon="lock-open" href="/token-manager/unlocker">
+    Bulk unlock (make public) or protect (make private) accounts.
+  </Card>
+  <Card title="Profile Changer" icon="user-pen" href="/token-manager/profile-changer">
+    Change display names and avatars in bulk across many accounts.
+  </Card>
+</CardGroup>
+
+### How accounts work
+
+Noir Console uses **auth_tokens** to authenticate with X. An auth_token is a cookie value that represents an active session on X.
+
+<Steps>
+  <Step title="Get your auth_tokens">
+    Extract auth_tokens from your X accounts. Each token is a long string that looks like a random hash.
+  </Step>
+  <Step title="Load into Pool">
+    Paste your tokens into the Token Manager Pool — one token per line.
+  </Step>
+  <Step title="Validate">
+    Run validation to check which tokens are still active. Invalid tokens are marked automatically.
+  </Step>
+  <Step title="Create groups">
+    Organize valid accounts into groups for use in other modules (DM, SMM, Quoting, etc.).
+  </Step>
+</Steps>
+
+<Warning>
+  **Always use proxies.** Accounts without proxies are at high risk of being banned by X, especially when running bulk operations. Set up proxies in the Pool page before using accounts in other modules.
+</Warning>

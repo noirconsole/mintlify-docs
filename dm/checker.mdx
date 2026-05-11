@@ -1,0 +1,39 @@
+---
+title: "DM Checker"
+description: "Check which accounts can send DMs"
+---
+
+## DM Checker
+
+The DM Checker tests your attached DM accounts to verify which ones can actually send direct messages. This is an important step before launching any DM campaign.
+
+<Frame>
+  <img src="/images/dm-checker.png" alt="DM Checker page" />
+</Frame>
+
+### How to Use
+
+<Steps>
+  <Step title="Open DM → Checker">
+    Navigate to the DM Checker page.
+  </Step>
+  <Step title="Run check">
+    Click **Start** to begin checking all attached DM accounts.
+  </Step>
+  <Step title="Review results">
+    Each account is marked as:
+    - **Open** — can send DMs
+    - **Restricted** — DM sending is blocked
+    - **Failed** — token is invalid or account error
+  </Step>
+</Steps>
+
+### Two-Phase Check
+
+The checker runs in two phases:
+1. **Token validation** — verifies the auth_token is still active
+2. **DM permission check** — tests if the account can actually initiate DMs
+
+<Tip>
+  Run the checker periodically — DM permissions can change over time as X adjusts account restrictions.
+</Tip>
