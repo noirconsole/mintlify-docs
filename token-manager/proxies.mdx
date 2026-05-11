@@ -1,6 +1,6 @@
 ---
 title: "Proxies"
-description: "How proxies work in Noir Console"
+description: "How proxies work in Noir Console and which type to use"
 ---
 
 ## How Proxies Work
@@ -17,18 +17,38 @@ There are only two sections where proxies are tied to individual accounts:
 
 This is because DM sending and account warming are long-running operations where each account needs a persistent, unique connection.
 
-## Proxy Types
+## Our Recommendations
 
-| Type | Speed | Anonymity | Best For |
-|------|-------|-----------|----------|
-| **Residential** | Medium | High | DM sending, following, long-term accounts |
-| **ISP/Static** | Fast | High | Main accounts, posting, long sessions |
-| **Datacenter** | Fast | Medium | Bulk operations, scraping |
-| **Mobile** | Varies | Very High | High-value accounts, anti-detection |
+<Warning>
+  Using accounts without proxies **will get them banned**. Always use proxies.
+</Warning>
 
-<Tip>
-  **Residential or ISP proxies** are the safest choice for most use cases. Datacenter proxies are cheaper but more likely to be flagged.
-</Tip>
+### Static (ISP) Proxies — for DM and Warmer
+
+For **DM sending** and **Warmer**, we recommend **static (ISP) proxies**. These modules run long sessions on the same account — the connection needs to stay stable and look like a real user sitting at one IP address.
+
+- One static proxy per account
+- The IP doesn't change — X sees a consistent connection
+- Best providers: any ISP/static residential proxy service
+
+### Residential or Mobile Proxies — for mass operations
+
+For **Quoting**, **SMM**, **Scraping**, **Posting Tool**, and other bulk modes, we recommend **residential** or **mobile** proxies. These modules cycle through many accounts quickly — rotating IPs look more natural for this pattern.
+
+- Residential proxies rotate IPs automatically — each request can come from a different address
+- Mobile proxies are the safest option (mobile carrier IPs are rarely flagged by X)
+- Best for: any mode where many accounts perform actions in a short burst
+
+### Summary
+
+| Module | Recommended Proxy Type | Why |
+|--------|----------------------|-----|
+| **DM** | Static / ISP | Long sessions, one account per IP |
+| **Warmer** | Static / ISP | Persistent warming, stable connection |
+| **Quoting** | Residential / Mobile | Burst of actions from many accounts |
+| **SMM** | Residential / Mobile | Mass likes, RT, follows across accounts |
+| **Scraping** | Residential / Mobile | High request volume, IP rotation needed |
+| **Posting Tool** | Residential / Mobile | Posting + boost from many accounts |
 
 ## Proxy Formats
 
