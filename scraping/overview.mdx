@@ -21,14 +21,17 @@ The Scraping module lets you collect usernames from X. Use the scraped data for 
 
 ### How Scraping Connects to Other Modules
 
-Both scrapers output **usernames** by default. Most modules accept usernames directly:
+The two scrapers output different formats:
+
+- **Followers Scraper** → outputs **user IDs** (numeric)
+- **Universal Scraper** → outputs **usernames**
 
 ```
-Scraping → Usernames → Quote Tags, Reply Quotes, Wall Posts, SMM
-Scraping → Usernames → DM Targets (accepts both usernames and IDs)
-Scraping → Usernames → Resolver (username → ID) → Image Tags (requires IDs)
+Followers Scraper → IDs     → DM Targets (accepts IDs directly)
+Followers Scraper → IDs     → Resolver (ID → username) → Quote Tags, Reply Quotes, Wall Posts, SMM
+Universal Scraper → Usernames → Quote Tags, Reply Quotes, Wall Posts, SMM, DM Targets
 ```
 
 <Info>
-  The scraper outputs `.txt` files with **usernames**. Most modules accept usernames directly — you only need the Resolver if a module requires numeric user IDs (e.g., Image Tags).
+  Most quoting/SMM modules need **usernames**, while DM accepts both. If you scraped followers (IDs), use the **Resolver** to convert to usernames before using in Quoting or SMM.
 </Info>

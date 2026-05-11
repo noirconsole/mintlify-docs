@@ -13,18 +13,16 @@ The Resolver converts between user IDs and usernames. Use it when a module requi
 
 ### When You Need the Resolver
 
-The scrapers output **usernames** by default. Most modules accept usernames directly, so you **don't always need the Resolver**.
+The **Followers Scraper** outputs IDs, the **Universal Scraper** outputs usernames. Different modules need different formats:
 
-| Module | Accepts | Resolver needed? |
-|--------|---------|-----------------|
-| **DM Bulk Sender** | Usernames and IDs | No |
-| **Quote Tags** | Usernames | No |
-| **Reply Quotes** | Usernames | No |
-| **Wall Posts** | Usernames | No |
-| **SMM Follow** | Usernames | No |
-| **Image Tags** (Quoting) | IDs only | **Yes** (username → ID) |
-
-The Resolver is mainly needed when you have **usernames** but need **IDs** (for Image Tags), or when you have **IDs** from an external source and need usernames.
+| Module | Accepts | After Followers Scraper (IDs) | After Universal Scraper (usernames) |
+|--------|---------|------------------------------|--------------------------------------|
+| **DM Bulk Sender** | Usernames and IDs | Direct | Direct |
+| **Quote Tags** | Usernames | **Resolver needed** (ID → username) | Direct |
+| **Reply Quotes** | Usernames | **Resolver needed** | Direct |
+| **Wall Posts** | Usernames | **Resolver needed** | Direct |
+| **SMM Follow** | Usernames | **Resolver needed** | Direct |
+| **Image Tags** | Usernames | **Resolver needed** | Direct |
 
 ### How to Use
 
